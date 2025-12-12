@@ -1,0 +1,20 @@
+姓名: 名称:​杰基尔站点CI
+
+开启:
+推送:
+分支:[“主”]​
+拉动请求​
+分支:[“主”]​
+
+工作:
+构建:
+
+运行在:ubuntu-latest
+
+步骤:​
+    - 用途: - 用途​actions/checkout@v4
+    - 姓名: 在jekyll/builder容器中构建站点
+运行: |
+码头运行\
+-v ${{​GitHub.workspace }}​​:/srv/jekyll-v${{​​GitHub.workspace }}​​/_site:/srv/jekyll/_site。
+jekyll/builder:latest /bin/bash -c"chmod -R 777 /srv/jekyll && jekyll build --future"
